@@ -4,7 +4,14 @@ def deep_reverse(L):
     reverses the order of the int elements in every element of L.
     It does not return anything.
     """
-    pass
+    length = len(L)
+    for elem in range(length):
+        L.append(L[length - 1 - elem][::-1])
+    for i in range(length):
+        L.pop(0)
+
+
+
 if __name__ == '__main__':
     elements = [
         {'given': [[0, 1, 2], [1, 2, 3]], 'expected': [[3, 2, 1], [2, 1, 0]]},

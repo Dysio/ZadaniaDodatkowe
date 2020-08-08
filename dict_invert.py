@@ -3,7 +3,18 @@ def dict_invert(d):
     :param d: dict
     :return: an inverted dictionary according to the instructions above
     """
-    pass
+    dict_inv = {}
+    for key, value in d.items():
+        if value in dict_inv.keys():
+            dict_inv[value].append(key)
+            dict_inv[value].sort()
+        else:
+            dict_inv[value] = [key]
+
+    return dict_inv
+
+
+
 if __name__ == '__main__':
     e = [
         {'given': {1: 10, 2: 20, 3: 30}, 'expected': {10: [1], 20: [2], 30: [3]}},
